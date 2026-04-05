@@ -15,7 +15,7 @@ function App() {
       </header>
 
       <main>
-        <Carousel autoplay={true} autoplayInterval={5000} wrapAround={true} slidesToShow={1} withoutControls={true}>
+        <Carousel className="hero-carousel" autoplay={true} autoplayInterval={5000} wrapMode="wrap" scrollDistance="slide" showArrows>
           <section className="hero">
             <p className="tagline">Simple. Fast. Everyday Shopping.</p>
             <h2>Everything you need in one place</h2>

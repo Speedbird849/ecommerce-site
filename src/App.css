@@ -48,15 +48,26 @@
 	color: var(--accent-soft);
 }
 
+.hero-carousel {
+	margin: 24px;
+}
+
 .hero {
+	box-sizing: border-box;
+	flex: 0 0 100%;
+	width: 100%;
+	min-height: 360px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	padding: 64px 20px;
 	background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	width: calc(100% - 48px);
-	margin: 24px;
+	margin: 0;
 	border-radius: 8px;
 	border: 1px solid var(--border-soft);
 	color: var(--text-main);
