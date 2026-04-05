@@ -1,7 +1,11 @@
 import "./App.css";
 import { Carousel } from 'nuka-carousel';
 import wood from "./wood.png";
-import what from "./what.jpg"
+import what from "./what.jpg";
+import hd600 from "./hd600tp.webp";
+import kbear from "./kbear.jpg";
+import bose from "./bose.webp";
+import fiio from "./fiio.jpg";
 
 function App() {
   return (
@@ -58,22 +62,69 @@ function App() {
         <section className="categories" id="categories">
           <h3 className="cat-label">POPULAR CATEGORIES</h3>
           <div className="category-grid">
-            <article className="card card1">
-              <p>Headphones</p>
-            </article>
-            <article className="card card2">
-              <p>Earphones and IEMs</p>
-            </article>
-            <article className="card card3">
-              <p>Speakers and Home Audio</p>
-            </article>
-            <article className="card card4">
-              <p>DACs and AMPs</p>
-            </article>
+            <a className="card-link" href="/#">
+              <article className="card card1">
+                <p>Headphones</p>
+              </article>
+            </a>
+            <a className="card-link" href="/#">
+              <article className="card card2">
+                <p>Earphones and IEMs</p>
+              </article>
+            </a>
+            <a className="card-link" href="/#">
+              <article className="card card3">
+                <p>Speakers and Home Audio</p>
+              </article>
+            </a>
+            <a className="card-link" href="/#">
+              <article className="card card4">
+                <p>DACs and AMPs</p>
+              </article>
+            </a>
           </div>
         </section>
 
-        <div className="what">
+        <section className="categories" id="feat">
+          <h3 className="cat-label">FEATURED PRODUCTS</h3>
+          <div className="category-grid">
+            <a className="card-link" href="/#">
+              <article className="cardfeat">
+                <img src={hd600} alt="Sennheiser HD600" />
+                <p><b>Sennheiser HD600</b></p>
+                <p className="desc">Studio reference headphones</p>
+                <p><span className="sale-price">₹13,999</span></p>
+              </article>
+            </a>
+            <a className="card-link" href="/#">
+              <article className="cardfeat">
+                <img src={kbear} alt="KBear Tourbillon Pro" />
+                <p><b>KBear Tourbillon Pro</b></p>
+                <p className="desc">High-End IEMs</p>
+                <p><span className="old-price">₹3999</span>&nbsp;<span className="sale-price">₹2799</span></p>
+              </article>
+            </a>
+            <a className="card-link" href="/#">
+              <article className="cardfeat">
+                <img src={bose} alt="Bose Solo 5" />
+                <p><b>Bose Solo 5</b></p>
+                <p className="desc">Best-in-class Soundbar</p>
+                <p>₹22,999</p>
+              </article>
+            </a>
+            <a className="card-link" href="/#">
+              <article className="cardfeat">
+                <img src={fiio} alt="FiiO M15" />
+                <p><b>FiiO M15</b></p>
+                <p className="desc">Portable Hi-Res Audio Player</p>
+                <p>₹37,999</p>
+              </article>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <div className="what">
           <section className="whattext" id="about">
             <p className="who-label">WHO WE ARE</p>
             <h3>For People Who Choose Music</h3>
@@ -87,25 +138,6 @@ function App() {
             <img src={what} alt="wood stool" />
           </section>
         </div>
-
-        <section className="categories" id="feat">
-          <h3 className="cat-label">FEATURED PRODUCTS</h3>
-          <div className="category-grid">
-            <article className="card card1">
-              <p>Headphones</p>
-            </article>
-            <article className="card card2">
-              <p>Earphones and IEMs</p>
-            </article>
-            <article className="card card3">
-              <p>Speakers and Home Audio</p>
-            </article>
-            <article className="card card4">
-              <p>DACs and AMPs</p>
-            </article>
-          </div>
-        </section>
-      </main>
 
       <footer className="footer" id="contact">
         <a href="https://github.com/Speedbird849/ecommerce-site">&copy; 2026 AudioZone. Designed by Aryan Gupta. All rights reserved.</a>
