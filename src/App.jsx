@@ -239,7 +239,7 @@ function App() {
     [cartItems]
   );
 
-  const formatPrice = (value) => `₹${value.toLocaleString("en-IN")}`;
+  const formatPrice = (value) => `₹${value}`;
 
   const addToCart = (product) => {
     setCartItems((previousItems) => {
