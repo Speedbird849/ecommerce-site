@@ -1,6 +1,7 @@
 import "./App.css";
 import { Carousel } from 'nuka-carousel';
 import wood from "./wood.png";
+import what from "./what.jpg"
 
 function App() {
   return (
@@ -20,16 +21,19 @@ function App() {
           <section className="hero hero1">
             <p className="tagline">Introducing the All New</p>
             <h2>AntCritical TZ-3 IEMs</h2>
+            <p className="hero-price"><span className="old-price">₹3999</span><span className="sale-price">₹2799</span></p>
             <button type="button">Shop Now</button>
           </section>
           <section className="hero hero2">
             <p className="tagline">Good sound doesn't have to be expensive</p>
             <h2>The Wave-Technica W50x-BT</h2>
+            <p className="hero-price"><span className="old-price">₹5999</span><span className="sale-price">₹5499</span></p>
             <button type="button">Shop Now</button>
           </section>
           <section className="hero hero3">
             <p className="tagline">Grab a free case with the new</p>
             <h2>TZ Thunder v2</h2>
+            <p className="hero-price"><span className="old-price">₹9999</span><span className="sale-price">₹7999</span></p>
             <button type="button">Shop Now</button>
           </section>
         </Carousel>
@@ -52,7 +56,40 @@ function App() {
         </div>
 
         <section className="categories" id="categories">
-          <h3>Popular Categories</h3>
+          <h3 className="cat-label">POPULAR CATEGORIES</h3>
+          <div className="category-grid">
+            <article className="card card1">
+              <p>Headphones</p>
+            </article>
+            <article className="card card2">
+              <p>Earphones and IEMs</p>
+            </article>
+            <article className="card card3">
+              <p>Speakers and Home Audio</p>
+            </article>
+            <article className="card card4">
+              <p>DACs and AMPs</p>
+            </article>
+          </div>
+        </section>
+
+        <div className="what">
+          <section className="whattext" id="about">
+            <p className="who-label">WHO WE ARE</p>
+            <h3>For People Who Choose Music</h3>
+            <p>Most people are happy if a song plays. Some people care about how it sounds. They notice when something's off, and they care enough to do something about it. They want to understand why a song moves them.
+            </p>
+            <p>
+              We built Audio Zone for them. Since 2026, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
+            </p>
+          </section>
+          <section className="whatimg">
+            <img src={what} alt="wood stool" />
+          </section>
+        </div>
+
+        <section className="categories" id="feat">
+          <h3 className="cat-label">FEATURED PRODUCTS</h3>
           <div className="category-grid">
             <article className="card card1">
               <p>Headphones</p>
