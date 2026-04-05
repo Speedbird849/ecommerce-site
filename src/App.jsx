@@ -298,15 +298,15 @@ function App() {
                 <button type="button" onClick={openCategory("earphones")}>Shop Now</button>
               </section>
               <section className="hero hero2">
-                <p className="tagline">Cinema sound, compact footprint</p>
-                <h2>Bose Solo 5 Soundbar</h2>
-                <p className="hero-price"><span className="old-price">₹11999</span><span className="sale-price">₹10499</span></p>
+                <p className="tagline">Good sound doesn't have to be expensive</p>
+                <h2>The Wave-Technica W50x-BT</h2>
+                <p className="hero-price"><span className="old-price">₹5999</span><span className="sale-price">₹5499</span></p>
                 <button type="button" onClick={openCategory("speakers")}>Shop Now</button>
               </section>
               <section className="hero hero3">
-                <p className="tagline">Reference-grade portable audio</p>
-                <h2>FiiO M15</h2>
-                <p className="hero-price"><span className="sale-price">₹8499</span></p>
+                <p className="tagline">Grab a free case with the new</p>
+                <h2>TZ Thunder v2</h2>
+                <p className="hero-price"><span className="old-price">₹9999</span><span className="sale-price">₹7999</span></p>
                 <button type="button" onClick={openCategory("dacs")}>Shop Now</button>
               </section>
             </Carousel>
