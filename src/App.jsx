@@ -56,7 +56,7 @@ function App() {
             <p>Most people are happy if a song plays. Some people care about how it sounds. They notice when something's off, and they care enough to do something about it. They want to understand why a song moves them.
             </p>
             <p>
-              We built Audio Zone for them. Since 2026, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
+              We built AudioZone for them. Since 2026, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
             </p>
             <p>
               We've spent 15 years helping people find that moment. It happens with the songs you already love. Heard again, for the first time.
@@ -136,7 +136,7 @@ function App() {
             <p>We're huge music fans, just like you. Whether you are an audiophile seeking the finest listening experience or a professional in need of reliable equipment, our range combines cutting-edge technology with elegant design. 
             </p>
             <p>
-              We built Audio Zone in 2026. Since then, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
+              We built AudioZone in 2026. Since then, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
             </p>
           </section>
           <section className="whatimg">

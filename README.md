@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# AudioZone - E-Commerce Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AudioZone is a modern React storefront concept focused on headphones and audio gear. The page includes a hero carousel, category highlights, featured products, and branded storytelling sections.
+
+## Tech Stack
+
+- React 19
+- Create React App (react-scripts 5)
+- Nuka Carousel 8
+- Plain CSS for styling and animations
+
+## Features
+
+- Hero carousel with autoplay promotional slides
+- Pricing display with sale and original prices
+- "Who We Are" and "Why AudioZone" brand sections
+- Popular categories grid
+- Featured products with imagery, pricing, and hover effects
+- Responsive layout tuned for desktop and mobile
+
+## Project Structure
+
+```
+ecommerce-site/
+	public/
+		index.html
+	src/
+		App.jsx
+		App.css
+		index.js
+		index.css
+		...assets
+	package.json
+	README.md
+```
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start the development server
+
+```bash
+npm start
+```
+
+Open http://localhost:3000 in your browser.
+
+### 3. Create a production build
+
+```bash
+npm run build
+```
+
+The optimized output is generated in the `build/` folder.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Runs the app in development mode.
+- `npm run build` - Builds the app for production.
+- `npm test` - Runs tests in watch mode.
+- `npm run eject` - Ejects CRA config (irreversible).
 
-### `npm start`
+## Customization Guide
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Update section content in `src/App.jsx`.
+- Adjust colors, typography, layout, and hover behavior in `src/App.css`.
+- Replace product and section images by updating imports in `src/App.jsx` and swapping files in `src/`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Notes
 
-### `npm test`
+- Some links currently point to placeholder targets (`/#`). Replace them with real routes or product URLs as needed.
+- Cart UI is present as a header action, but cart functionality is not implemented yet.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Author
 
-### `npm run build`
+Designed by Aryan Gupta.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## License
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is for educational and portfolio use.
