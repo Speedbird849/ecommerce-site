@@ -1,5 +1,6 @@
 import "./App.css";
 import { Carousel } from 'nuka-carousel';
+import wood from "./wood.png";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       </header>
 
       <main>
-        <Carousel className="hero-carousel" autoplay={true} autoplayInterval={5000} wrapMode="wrap" scrollDistance="slide" showArrows>
+        <Carousel className="hero-carousel" autoplay={true} autoplayInterval={3000} wrapMode="wrap" scrollDistance="slide" showArrows>
           <section className="hero hero1">
             <p className="tagline">Introducing the All New</p>
             <h2>AntCritical TZ-3 IEMs</h2>
@@ -32,17 +33,39 @@ function App() {
             <button type="button">Shop Now</button>
           </section>
         </Carousel>
-
         <div className="who">
-          
+          <section className="whoimg">
+            <img src={wood} alt="wood stool" />
+          </section>
+          <section className="whotext" id="about">
+            <p className="who-label">WHO WE ARE</p>
+            <h3>For People Who Choose Music</h3>
+            <p>Most people are happy if a song plays. Some people care about how it sounds. They notice when something's off, and they care enough to do something about it. They want to understand why a song moves them.
+            </p>
+            <p>
+              We built Audio Zone for them. Since 2026, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
+            </p>
+            <p>
+              We've spent 15 years helping people find that moment. It happens with the songs you already love. Heard again, for the first time.
+            </p>
+          </section>
         </div>
 
         <section className="categories" id="categories">
           <h3>Popular Categories</h3>
           <div className="category-grid">
-            <article className="card">Clothing</article>
-            <article className="card">Electronics</article>
-            <article className="card">Home & Kitchen</article>
+            <article className="card card1">
+              <p>Headphones</p>
+            </article>
+            <article className="card card2">
+              <p>Earphones and IEMs</p>
+            </article>
+            <article className="card card3">
+              <p>Speakers and Home Audio</p>
+            </article>
+            <article className="card card4">
+              <p>DACs and AMPs</p>
+            </article>
           </div>
         </section>
       </main>

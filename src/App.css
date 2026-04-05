@@ -107,6 +107,61 @@
     background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./leaf.png");
 }
 
+.who {
+	margin: 0 24px 24px;
+	padding: 32px;
+    padding-left: 120px;
+    padding-right: 120px;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-soft);
+	border-radius: 8px;
+	display: grid;
+	grid-template-columns: minmax(280px, 44%) 1fr;
+	gap: 32px;
+	align-items: start;
+}
+
+.whotext {
+	margin-left: -30%;
+}
+
+.whoimg {
+	margin-right: 0;
+}
+
+.whoimg img {
+	display: block;
+	max-height: 350px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.who-label {
+	margin: 0 0 12px;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	color: var(--text-muted);
+}
+
+.who h3 {
+	margin: 0 0 16px;
+	font-size: 2.4rem;
+	line-height: 1.1;
+	max-width: 620px;
+}
+
+.who p {
+	max-width: 860px;
+	line-height: 1.7;
+	font-size: 1.05rem;
+	color: var(--text-muted);
+}
+
+.who p:last-child {
+	margin-bottom: 0;
+}
+
 footer a:link {
     color: rgb(75, 74, 78);
     text-decoration: none;
@@ -124,9 +179,19 @@ footer a:visited {
 	border: 1px solid var(--border-soft);
 }
 
-.categories h3 {
+.categories h3,
+.featured-products h3 {
 	margin-top: 0;
 }
+
+.featured-products {
+	margin: 0 24px 24px;
+	padding: 24px;
+	background: var(--bg-surface);
+	border-radius: 8px;
+	border: 1px solid var(--border-soft);
+}
+
 
 .category-grid {
 	display: grid;
@@ -136,11 +201,39 @@ footer a:visited {
 
 .card {
 	background: var(--bg-surface-alt);
+    background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	padding: 20px;
 	border-radius: 6px;
 	text-align: center;
+    min-height: 150px;
 	border: 1px solid #3a4048;
 	color: var(--text-main);
+}
+
+.card p {
+    margin: 30% 0;
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	color: white;
+}
+
+.card1 {
+    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./hd600.webp");
+}
+
+.card2 {
+    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
+}
+
+.card3 {
+    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
+}
+
+.card4 {
+    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
 }
 
 .footer {
@@ -148,4 +241,27 @@ footer a:visited {
 	padding: 16px;
 	color: var(--text-muted);
 	font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+	.who {
+		padding: 24px;
+		grid-template-columns: 1fr;
+	}
+
+	.whoimg img {
+		min-height: 260px;
+	}
+
+	.who h3 {
+		font-size: 1.9rem;
+	}
+
+	.who p {
+		font-size: 1rem;
+	}
+
+	.category-grid {
+		grid-template-columns: repeat(2, minmax(140px, 1fr));
+	}
 }
