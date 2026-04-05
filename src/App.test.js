@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('nuka-carousel', () => ({
+  Carousel: ({ children }) => <div>{children}</div>,
+}));
+
+test('renders AudioZone brand', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const brandElement = screen.getByRole('heading', { name: /audio\s*zone/i });
+  expect(brandElement).toBeInTheDocument();
 });
