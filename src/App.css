@@ -33,6 +33,12 @@
 	color: var(--text-main);
 }
 
+.header-actions {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
 .menu {
 	display: flex;
 	gap: 16px;
@@ -46,6 +52,26 @@
 
 .menu a:hover {
 	color: var(--accent-soft);
+}
+
+.cart-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	border: 1px solid #4c5461;
+	border-radius: 999px;
+	background: #2a313d;
+	color: #f5f7fb;
+	text-decoration: none;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cart-link:hover {
+	background: #333b4a;
+	transform: translateY(-1px);
 }
 
 .hero-carousel {

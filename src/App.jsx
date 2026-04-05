@@ -12,12 +12,17 @@ function App() {
     <div className="page">
       <header className="topbar">
         <h1 className="brand">Audio<span>Zone</span></h1>
-        <nav className="menu">
-          <a href="#home">Home</a>
-          <a href="#categories">Categories</a>
-          <a href="#deals">Deals</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div className="header-actions">
+          <nav className="menu">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#deals">Deals</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <a className="cart-link" href="#" aria-label="Open cart">
+            <span aria-hidden="true">🛒</span> Cart
+          </a>
+        </div>
       </header>
 
       <main>
