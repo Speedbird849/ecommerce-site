@@ -273,11 +273,11 @@ function App() {
   return (
     <div className="page">
       <header className="topbar">
-        <a href="#home" onClick={openHome}><h1 className="brand">Audio<span>Zone</span></h1></a>
+        <a href="#" onClick={() => window.location.reload()}><h1 className="brand">Audio<span>Zone</span></h1></a>
         <nav className="menu">
-          <a href="#home" onClick={openHome}>Home</a>
-          <a href="#categories" onClick={openHome}>Categories</a>
-          <a href="#featured" onClick={openHome}>Featured</a>
+          <a href="#home">Home</a>
+          <a href="#categories">Categories</a>
+          <a href="#featured">Featured</a>
           <a href="#contact">Contact</a>
         </nav>
         <a className="cart-link" href="#cart" aria-label="Open cart" onClick={openCart}>
@@ -285,10 +285,12 @@ function App() {
         </a>
       </header>
 
+      <br /><br /><br /><br />
+
       {activePage === "home" ? (
         <>
           <main>
-            <Carousel className="hero-carousel" autoplay={true} autoplayInterval={3000} wrapMode="wrap" scrollDistance="slide" showArrows>
+            <Carousel id="home" className="hero-carousel" autoplay={true} autoplayInterval={3000} wrapMode="wrap" scrollDistance="slide" showArrows>
               <section className="hero hero1">
                 <p className="tagline">Introducing the All New</p>
                 <h2>AntCritical TZ-3 IEMs</h2>
@@ -420,8 +422,10 @@ function App() {
               <span>Total</span>
               <span>{formatPrice(cartTotal)}</span>
             </p>
-            <button className="checkout-btn" type="button">Checkout</button>
-            <button className="add-to-cart-btn" type="button" onClick={openHome}>Continue Shopping</button>
+            <div className="cart-actions">
+              <button className="add-to-cart-btn" type="button" onClick={openHome}>Continue Shopping</button>
+              <button className="checkout-btn" type="button">Checkout</button>
+            </div>
           </aside>
         </main>
       ) : (
@@ -458,7 +462,7 @@ function App() {
         </main>
       )}
 
-      <footer className="footer">
+      <footer className="footer" id="contact">
         <a href="https://github.com/Speedbird849/ecommerce-site">&copy; 2026 AudioZone. Designed by Aryan Gupta. All rights reserved.</a>
       </footer>
     </div>

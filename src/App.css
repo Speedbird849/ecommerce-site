@@ -582,10 +582,21 @@ footer a:visited {
 	font-size: 1.05rem;
 }
 
+.cart-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 10px;
+}
+
+.cart-actions .add-to-cart-btn,
+.cart-actions .checkout-btn {
+	margin: 0;
+}
+
 .checkout-btn {
-	margin-top: 8px;
-	margin-bottom: 10px;
-	width: 100%;
+	width: auto;
 	padding: 10px 14px;
 	border-radius: 4px;
 	border: 1px solid #5ecb6f;
@@ -659,6 +670,11 @@ footer a:visited {
 		top: 12px;
 		left: 12px;
 		padding: 9px 14px;
+	}
+
+	.cart-actions {
+		flex-direction: column;
+		align-items: stretch;
 	}
 
 	.cart-item {
