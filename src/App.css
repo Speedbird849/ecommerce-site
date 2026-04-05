@@ -146,15 +146,15 @@ a:link {
 }
 
 .hero1 {
-    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
+	background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./assets/iem.png");
 }
 
 .hero2 {
-    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./headph.png");
+	background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./assets/headph.png");
 }
 
 .hero3 {
-    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./leaf.png");
+	background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./assets/leaf.png");
 }
 
 .who {
@@ -347,19 +347,19 @@ footer a:visited {
 }
 
 .card1 {
-    background-image: url("./hd600.webp");
+	background-image: url("./assets/hd600.webp");
 }
 
 .card2 {
-    background-image: url("./shure.jpg");
+	background-image: url("./assets/shure.jpg");
 }
 
 .card3 {
-    background-image: url("./home.webp");
+	background-image: url("./assets/home.webp");
 }
 
 .card4 {
-    background-image: url("./dac.jpg");
+	background-image: url("./assets/dac.jpg");
 }
 
 .cardfeat {

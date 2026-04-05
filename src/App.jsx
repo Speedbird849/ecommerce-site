@@ -1,26 +1,30 @@
 import { useMemo, useState } from "react";
 import "./App.css";
 import { Carousel } from 'nuka-carousel';
-import wood from "./wood.png";
-import what from "./what.jpg";
-import hd600 from "./hd600tp.webp";
-import kbear from "./kbear.jpg";
-import wavetechnica from "./wavetechnica.jpg";
-import audiozonea4 from "./audiozonea4.jpg";
-import cobaltc1 from "./cobaltc1.jpeg";
-import iem from "./iem.png";
-import iem2 from "./iem2.webp";
-import iem3 from "./iem3.jpg";
-import bose from "./bose.webp";
-import soundbar1 from "./soundbar1.jpg";
-import soundbar2 from "./soundbar2.jpg";
-import soundbar3 from "./soundbar3.jpg";
-import home from "./home.webp";
-import fiio from "./fiio.jpg";
-import dac from "./dac.jpg";
-import dac1 from "./dac1.jpg";
-import dac2 from "./dac2.webp";
-import dac3 from "./dac3.webp";
+import wood from "./assets/wood.png";
+import what from "./assets/what.jpg";
+import hd600 from "./assets/hd600tp.webp";
+import kbear from "./assets/kbear.jpg";
+import wavetechnica from "./assets/wavetechnica.jpg";
+import audiozonea4 from "./assets/audiozonea4.jpg";
+import cobaltc1 from "./assets/cobaltc1.jpeg";
+import categoryHeadphones from "./assets/category-headphones.jpg";
+import categoryEarphones from "./assets/category-earphones.webp";
+import categorySpeakers from "./assets/category-speakers.webp";
+import categoryDacs from "./assets/category-dacs.jpg";
+import iem from "./assets/iem.png";
+import iem2 from "./assets/iem2.webp";
+import iem3 from "./assets/iem3.jpg";
+import bose from "./assets/bose.webp";
+import soundbar1 from "./assets/soundbar1.jpg";
+import soundbar2 from "./assets/soundbar2.jpg";
+import soundbar3 from "./assets/soundbar3.jpg";
+import home from "./assets/home.webp";
+import fiio from "./assets/fiio.jpg";
+import dac from "./assets/dac.jpg";
+import dac1 from "./assets/dac1.jpg";
+import dac2 from "./assets/dac2.webp";
+import dac3 from "./assets/dac3.webp";
 
 const featuredProducts = [
   {
@@ -62,7 +66,7 @@ const featuredProducts = [
 const categoryPages = {
   headphones: {
     title: "Headphones",
-    image: wavetechnica,
+    image: categoryHeadphones,
     items: [
       {
         id: "hd600",
@@ -101,7 +105,7 @@ const categoryPages = {
   },
   earphones: {
     title: "Earphones and IEMs",
-    image: iem2,
+    image: categoryEarphones,
     items: [
       {
         id: "kbear-tourbillon-pro",
@@ -142,7 +146,7 @@ const categoryPages = {
   },
   speakers: {
     title: "Speakers and Home Audio",
-    image: soundbar1,
+    image: categorySpeakers,
     items: [
       {
         id: "bose-solo-5",
@@ -181,7 +185,7 @@ const categoryPages = {
   },
   dacs: {
     title: "DACs and AMPs",
-    image: dac1,
+    image: categoryDacs,
     items: [
       {
         id: "fiio-m15",
