@@ -273,7 +273,7 @@ function App() {
   return (
     <div className="page">
       <header className="topbar">
-        <a href="#" onClick={() => window.location.reload()}><h1 className="brand">Audio<span>Zone</span></h1></a>
+        <a href="#home" onClick={() => window.location.reload()}><h1 className="brand">Audio<span>Zone</span></h1></a>
         <nav className="menu">
           <a href="#home">Home</a>
           <a href="#categories">Categories</a>
