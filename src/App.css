@@ -1,0 +1,115 @@
+.page {
+	--bg-main: #111317;
+	--bg-surface: #1a1f27;
+	--bg-surface-alt: #202734;
+	--text-main: #e8ecf3;
+	--text-muted: #a7b0c0;
+	--border-soft: #2a3240;
+	--accent: #61b7ff;
+	--accent-soft: #91ccff;
+
+	min-height: 100vh;
+	font-family: Arial, sans-serif;
+	color: var(--text-main);
+	background: radial-gradient(circle at top, #1a2230 0%, var(--bg-main) 45%);
+}
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 24px;
+	background: var(--bg-surface);
+	border-bottom: 1px solid var(--border-soft);
+}
+
+.brand {
+	margin: 0;
+	font-size: 1.4rem;
+	color: var(--text-main);
+}
+
+.menu {
+	display: flex;
+	gap: 16px;
+}
+
+.menu a {
+	text-decoration: none;
+	color: var(--text-muted);
+	font-size: 0.95rem;
+}
+
+.menu a:hover {
+	color: var(--accent-soft);
+}
+
+.hero {
+	text-align: center;
+	padding: 64px 20px;
+	background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 24px;
+	border-radius: 8px;
+	border: 1px solid var(--border-soft);
+	color: var(--text-main);
+}
+
+.tagline {
+	margin: 0 0 8px;
+	color: var(--accent-soft);
+}
+
+.hero h2 {
+	margin: 0 0 20px;
+	font-size: 2rem;
+}
+
+.hero button {
+	border: 1px solid #6fc0ff;
+	background: #1f4d73;
+	color: #eaf5ff;
+	padding: 10px 18px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.hero button:hover {
+	background: #275f8f;
+}
+
+.categories {
+	margin: 0 24px 24px;
+	padding: 24px;
+	background: var(--bg-surface);
+	border-radius: 8px;
+	border: 1px solid var(--border-soft);
+}
+
+.categories h3 {
+	margin-top: 0;
+}
+
+.category-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 12px;
+}
+
+.card {
+	background: var(--bg-surface-alt);
+	padding: 20px;
+	border-radius: 6px;
+	text-align: center;
+	border: 1px solid #30394a;
+	color: var(--text-main);
+}
+
+.footer {
+	text-align: center;
+	padding: 16px;
+	color: var(--text-muted);
+	font-size: 0.9rem;
+}
