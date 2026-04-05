@@ -1,17 +1,17 @@
 .page {
 	--bg-main: #111317;
-	--bg-surface: #1a1f27;
-	--bg-surface-alt: #202734;
+	--bg-surface: #1b1d22;
+	--bg-surface-alt: #24272d;
 	--text-main: #e8ecf3;
-	--text-muted: #a7b0c0;
-	--border-soft: #2a3240;
+	--text-muted: #a5aab3;
+	--border-soft: #333840;
 	--accent: #61b7ff;
-	--accent-soft: #91ccff;
+	--accent-soft: #c7ccd4;
 
 	min-height: 100vh;
 	font-family: 'DM Sans', Arial, sans-serif;
 	color: var(--text-main);
-	background: radial-gradient(circle at top, #1a2230 0%, var(--bg-main) 45%);
+	background: radial-gradient(circle at top, #1f2228 0%, var(--bg-main) 45%);
 }
 
 .topbar {
@@ -63,7 +63,6 @@
 	align-items: center;
 	text-align: center;
 	padding: 64px 20px;
-	background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -75,7 +74,7 @@
 
 .tagline {
 	margin: 0 0 8px;
-	color: var(--accent-soft);
+	color: var(--text-muted);
 }
 
 .hero h2 {
@@ -94,6 +93,27 @@
 
 .hero button:hover {
 	background: #275f8f;
+}
+
+.hero1 {
+    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
+}
+
+.hero2 {
+    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./headph.png");
+}
+
+.hero3 {
+    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./leaf.png");
+}
+
+footer a:link {
+    color: rgb(75, 74, 78);
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: rgb(75, 74, 78);
 }
 
 .categories {
@@ -119,7 +139,7 @@
 	padding: 20px;
 	border-radius: 6px;
 	text-align: center;
-	border: 1px solid #30394a;
+	border: 1px solid #3a4048;
 	color: var(--text-main);
 }
 
