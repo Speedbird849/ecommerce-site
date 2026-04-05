@@ -56,7 +56,7 @@ function App() {
             <p>Most people are happy if a song plays. Some people care about how it sounds. They notice when something's off, and they care enough to do something about it. They want to understand why a song moves them.
             </p>
             <p>
-              We built Audio Zone for them. Since 2026, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
+              We built Audio Zone in 2026. Since then, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
             </p>
             <p>
               We've spent 15 years helping people find that moment. It happens with the songs you already love. Heard again, for the first time.
@@ -98,7 +98,7 @@ function App() {
                 <img src={hd600} alt="Sennheiser HD600" />
                 <p><b>Sennheiser HD600</b></p>
                 <p className="desc">Studio reference headphones</p>
-                <p><span className="sale-price">₹13,999</span></p>
+                <p><span className="sale-price">₹6,999</span></p>
               </article>
             </a>
             <a className="card-link" href="/#">
@@ -114,7 +114,7 @@ function App() {
                 <img src={bose} alt="Bose Solo 5" />
                 <p><b>Bose Solo 5</b></p>
                 <p className="desc">Best-in-class Soundbar</p>
-                <p>₹22,999</p>
+                <p>₹11,999</p>
               </article>
             </a>
             <a className="card-link" href="/#">
@@ -122,7 +122,7 @@ function App() {
                 <img src={fiio} alt="FiiO M15" />
                 <p><b>FiiO M15</b></p>
                 <p className="desc">Portable Hi-Res Audio Player</p>
-                <p>₹37,999</p>
+                <p>₹8,499</p>
               </article>
             </a>
           </div>
@@ -131,9 +131,9 @@ function App() {
 
       <div className="what">
           <section className="whattext" id="about">
-            <p className="who-label">WHO WE ARE</p>
-            <h3>For People Who Choose Music</h3>
-            <p>Most people are happy if a song plays. Some people care about how it sounds. They notice when something's off, and they care enough to do something about it. They want to understand why a song moves them.
+            <p className="who-label">WHY AUDIOZONE?</p>
+            <h3>Because We Care About Music.</h3>
+            <p>We're huge music fans, just like you. Whether you are an audiophile seeking the finest listening experience or a professional in need of reliable equipment, our range combines cutting-edge technology with elegant design. 
             </p>
             <p>
               We built Audio Zone for them. Since 2026, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
