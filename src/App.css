@@ -71,7 +71,7 @@
 
 .cart-link:hover {
 	background: #333b4a;
-	transform: translateY(-1px);
+	transform: scale(1.03);
 }
 
 .hero-carousel {
@@ -328,7 +328,7 @@ footer a:visited {
 }
 
 .card:hover {
-	transform: translateY(-4px);
+	transform: scale(1.02);
 	border-color: #4a515d;
 }
 
@@ -382,7 +382,7 @@ footer a:visited {
 }
 
 .cardfeat:hover {
-	transform: translateY(-4px);
+	transform: scale(1.02);
 	border-color: #4a515d;
 	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
