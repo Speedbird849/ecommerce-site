@@ -34,7 +34,7 @@ function App() {
         </Carousel>
 
         <div className="who">
-
+          
         </div>
 
         <section className="categories" id="categories">
