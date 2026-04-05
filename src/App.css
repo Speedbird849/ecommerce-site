@@ -210,6 +210,20 @@ footer a:visited {
     min-height: 150px;
 	border: 1px solid #3a4048;
 	color: var(--text-main);
+	position: relative;
+	overflow: hidden;
+}
+
+.card::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(12, 16, 23, 0.72);
+	transition: opacity 0.2s ease;
+}
+
+.card:hover::before {
+	opacity: 0.5;
 }
 
 .card p {
@@ -218,22 +232,24 @@ footer a:visited {
 	font-weight: 700;
 	letter-spacing: 0.12em;
 	color: white;
+	position: relative;
+	z-index: 1;
 }
 
 .card1 {
-    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./hd600.webp");
+    background-image: url("./hd600.webp");
 }
 
 .card2 {
-    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
+    background-image: url("./shure.jpg");
 }
 
 .card3 {
-    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
+    background-image: url("./home.webp");
 }
 
 .card4 {
-    background-image: linear-gradient(rgba(12, 16, 23, 0.72), rgba(12, 16, 23, 0.72)), url("./iem.png");
+    background-image: url("./iem.png");
 }
 
 .footer {
