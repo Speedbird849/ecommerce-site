@@ -5,8 +5,22 @@ import wood from "./wood.png";
 import what from "./what.jpg";
 import hd600 from "./hd600tp.webp";
 import kbear from "./kbear.jpg";
+import wavetechnica from "./wavetechnica.jpg";
+import audiozonea4 from "./audiozonea4.jpg";
+import cobaltc1 from "./cobaltc1.jpeg";
+import iem from "./iem.png";
+import iem2 from "./iem2.webp";
+import iem3 from "./iem3.jpg";
 import bose from "./bose.webp";
+import soundbar1 from "./soundbar1.jpg";
+import soundbar2 from "./soundbar2.jpg";
+import soundbar3 from "./soundbar3.jpg";
+import home from "./home.webp";
 import fiio from "./fiio.jpg";
+import dac from "./dac.jpg";
+import dac1 from "./dac1.jpg";
+import dac2 from "./dac2.webp";
+import dac3 from "./dac3.webp";
 
 const featuredProducts = [
   {
@@ -45,9 +59,171 @@ const featuredProducts = [
   },
 ];
 
+const categoryPages = {
+  headphones: {
+    title: "Headphones",
+    image: wavetechnica,
+    items: [
+      {
+        id: "hd600",
+        name: "Sennheiser HD600",
+        description: "Open-back studio reference headphones",
+        price: 6999,
+        image: hd600,
+        alt: "Sennheiser HD600",
+      },
+      {
+        id: "wave-w50x-bt",
+        name: "Wave-Technica W50x-BT",
+        description: "Wireless monitoring headphones",
+        price: 5499,
+        oldPrice: 5999,
+        image: wavetechnica,
+        alt: "Wave-Technica W50x-BT",
+      },
+      {
+        id: "audiozone-a4",
+        name: "AudioZone A4",
+        description: "Comfort-first everyday over-ears",
+        price: 3499,
+        image: audiozonea4,
+        alt: "AudioZone A4",
+      },
+      {
+        id: "cobalt-c1",
+        name: "Cobalt C1",
+        description: "Balanced tuning for long sessions",
+        price: 4299,
+        image: cobaltc1,
+        alt: "Cobalt C1",
+      },
+    ],
+  },
+  earphones: {
+    title: "Earphones and IEMs",
+    image: iem2,
+    items: [
+      {
+        id: "kbear-tourbillon-pro",
+        name: "KBear Tourbillon Pro",
+        description: "Hybrid driver IEM with detailed mids",
+        price: 2799,
+        oldPrice: 3999,
+        image: kbear,
+        alt: "KBear Tourbillon Pro",
+      },
+      {
+        id: "tz-thunder-v2",
+        name: "TZ Thunder v2",
+        description: "Bass-forward daily-use IEM",
+        price: 7999,
+        oldPrice: 9999,
+        image: iem2,
+        alt: "TZ Thunder v2",
+      },
+      {
+        id: "antcritical-tz-3",
+        name: "AntCritical TZ-3",
+        description: "Compact IEM with neutral signature",
+        price: 2799,
+        oldPrice: 3999,
+        image: iem,
+        alt: "AntCritical TZ-3",
+      },
+      {
+        id: "sonic-s5",
+        name: "Sonic S5",
+        description: "Comfort-fit earphones for long listening",
+        price: 2199,
+        image: iem3,
+        alt: "Sonic S5",
+      },
+    ],
+  },
+  speakers: {
+    title: "Speakers and Home Audio",
+    image: soundbar1,
+    items: [
+      {
+        id: "bose-solo-5",
+        name: "Bose Solo 5",
+        description: "Compact home theater soundbar",
+        price: 10499,
+        oldPrice: 11999,
+        image: soundbar1,
+        alt: "Bose Solo 5",
+      },
+      {
+        id: "roomtone-r7",
+        name: "RoomTone R7",
+        description: "Living-room friendly stereo speakers",
+        price: 8999,
+        image: soundbar2,
+        alt: "RoomTone R7",
+      },
+      {
+        id: "pulsebar-p3",
+        name: "PulseBar P3",
+        description: "TV soundbar with dialogue boost",
+        price: 6999,
+        image: soundbar3,
+        alt: "PulseBar P3",
+      },
+      {
+        id: "atmo-mini",
+        name: "Atmo Mini",
+        description: "Desktop speaker pair for music and movies",
+        price: 5199,
+        image: home,
+        alt: "Atmo Mini",
+      },
+    ],
+  },
+  dacs: {
+    title: "DACs and AMPs",
+    image: dac1,
+    items: [
+      {
+        id: "fiio-m15",
+        name: "FiiO M15",
+        description: "Portable Hi-Res Audio Player",
+        price: 8499,
+        image: dac1,
+        alt: "FiiO M15",
+      },
+      {
+        id: "zen-air-dac",
+        name: "Zen Air DAC",
+        description: "Warm desktop DAC for daily listening",
+        price: 6999,
+        image: dac2,
+        alt: "Zen Air DAC",
+      },
+      {
+        id: "ampbox-a2",
+        name: "AmpBox A2",
+        description: "Compact headphone amplifier",
+        price: 5799,
+        image: dac3,
+        alt: "AmpBox A2",
+      },
+      {
+        id: "daclink-d1",
+        name: "DACLink D1",
+        description: "USB DAC with clean neutral output",
+        price: 4999,
+        image: dac,
+        alt: "DACLink D1",
+      },
+    ],
+  },
+};
+
 function App() {
   const [activePage, setActivePage] = useState("home");
   const [cartItems, setCartItems] = useState([]);
+
+  const activeCategory = categoryPages[activePage];
 
   const totalItems = useMemo(
     () => cartItems.reduce((sum, item) => sum + item.quantity, 0),
@@ -59,7 +235,7 @@ function App() {
     [cartItems]
   );
 
-  const formatPrice = (value) => `₹${value}`;
+  const formatPrice = (value) => `₹${value.toLocaleString("en-IN")}`;
 
   const addToCart = (product) => {
     setCartItems((previousItems) => {
@@ -76,13 +252,18 @@ function App() {
   };
 
   const openCart = (event) => {
-    event.preventDefault();
+    event?.preventDefault();
     setActivePage("cart");
   };
 
   const openHome = (event) => {
-    event.preventDefault();
+    event?.preventDefault();
     setActivePage("home");
+  };
+
+  const openCategory = (categoryKey) => (event) => {
+    event.preventDefault();
+    setActivePage(categoryKey);
   };
 
   return (
@@ -92,8 +273,8 @@ function App() {
         <div className="header-actions">
           <nav className="menu">
             <a href="#home" onClick={openHome}>Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#featured">Featured</a>
+            <a href="#categories" onClick={openHome}>Categories</a>
+            <a href="#featured" onClick={openHome}>Featured</a>
             <a href="#contact">Contact</a>
           </nav>
           <a className="cart-link" href="#cart" aria-label="Open cart" onClick={openCart}>
@@ -110,19 +291,19 @@ function App() {
                 <p className="tagline">Introducing the All New</p>
                 <h2>AntCritical TZ-3 IEMs</h2>
                 <p className="hero-price"><span className="old-price">₹3999</span><span className="sale-price">₹2799</span></p>
-                <button type="button">Shop Now</button>
+                <button type="button" onClick={openCategory("earphones")}>Shop Now</button>
               </section>
               <section className="hero hero2">
-                <p className="tagline">Good sound doesn't have to be expensive</p>
-                <h2>The Wave-Technica W50x-BT</h2>
-                <p className="hero-price"><span className="old-price">₹5999</span><span className="sale-price">₹5499</span></p>
-                <button type="button">Shop Now</button>
+                <p className="tagline">Cinema sound, compact footprint</p>
+                <h2>Bose Solo 5 Soundbar</h2>
+                <p className="hero-price"><span className="old-price">₹11999</span><span className="sale-price">₹10499</span></p>
+                <button type="button" onClick={openCategory("speakers")}>Shop Now</button>
               </section>
               <section className="hero hero3">
-                <p className="tagline">Grab a free case with the new</p>
-                <h2>TZ Thunder v2</h2>
-                <p className="hero-price"><span className="old-price">₹9999</span><span className="sale-price">₹7999</span></p>
-                <button type="button">Shop Now</button>
+                <p className="tagline">Reference-grade portable audio</p>
+                <h2>FiiO M15</h2>
+                <p className="hero-price"><span className="sale-price">₹8499</span></p>
+                <button type="button" onClick={openCategory("dacs")}>Shop Now</button>
               </section>
             </Carousel>
             <div className="who">
@@ -143,7 +324,7 @@ function App() {
               </section>
             </div>
 
-            <section className="categories" id="categories  ">
+            <section className="categories" id="featured">
               <h3 className="cat-label">FEATURED PRODUCTS</h3>
               <div className="category-grid">
                 {featuredProducts.map((product) => (
@@ -166,22 +347,22 @@ function App() {
           <section className="categories" id="categories">
             <h3 className="cat-label">POPULAR CATEGORIES</h3>
             <div className="category-grid">
-              <a className="card-link" href="/#">
+              <a className="card-link" href="#headphones" onClick={openCategory("headphones")}>
                 <article className="card card1">
                   <p>Headphones</p>
                 </article>
               </a>
-              <a className="card-link" href="/#">
+              <a className="card-link" href="#earphones" onClick={openCategory("earphones")}>
                 <article className="card card2">
                   <p>Earphones and IEMs</p>
                 </article>
               </a>
-              <a className="card-link" href="/#">
+              <a className="card-link" href="#speakers" onClick={openCategory("speakers")}>
                 <article className="card card3">
                   <p>Speakers and Home Audio</p>
                 </article>
               </a>
-              <a className="card-link" href="/#">
+              <a className="card-link" href="#dacs" onClick={openCategory("dacs")}>
                 <article className="card card4">
                   <p>DACs and AMPs</p>
                 </article>
@@ -204,7 +385,7 @@ function App() {
             </section>
           </div>
         </>
-      ) : (
+      ) : activePage === "cart" ? (
         <main className="cart-page" id="cart">
           <section className="cart-items-panel">
             <h2>Your Cart</h2>
@@ -239,6 +420,38 @@ function App() {
             </p>
             <button className="add-to-cart-btn" type="button" onClick={openHome}>Continue Shopping</button>
           </aside>
+        </main>
+      ) : (
+        <main className="category-page">
+          <section className="category-header">
+            <button className="category-back-btn" type="button" onClick={openHome}>
+              Back to Home
+            </button>
+            <img src={activeCategory.image} alt={activeCategory.title} />
+            <div className="category-header-content">
+              <p className="who-label">CATEGORY</p>
+              <h2>{activeCategory.title}</h2>
+            </div>
+          </section>
+
+          <section className="categories">
+            <h3 className="cat-label">SHOP {activeCategory.title.toUpperCase()}</h3>
+            <div className="category-grid">
+              {activeCategory.items.map((product) => (
+                <article className="cardfeat" key={product.id}>
+                  <img src={product.image} alt={product.alt} />
+                  <p><b>{product.name}</b></p>
+                  <p className="desc">{product.description}</p>
+                  <p>
+                    {product.oldPrice ? <span className="old-price">{formatPrice(product.oldPrice)}</span> : null}
+                    {product.oldPrice ? " " : null}
+                    <span className="sale-price">{formatPrice(product.price)}</span>
+                  </p>
+                  <button className="add-to-cart-btn" type="button" onClick={() => addToCart(product)}>Add to Cart</button>
+                </article>
+              ))}
+            </div>
+          </section>
         </main>
       )}
 
