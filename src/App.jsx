@@ -137,7 +137,7 @@ const categoryPages = {
       {
         id: "sonic-s5",
         name: "Sonic S5",
-        description: "Comfort-fit earphones for long listening",
+        description: "Comfort-fit earphones",
         price: 2199,
         image: iem3,
         alt: "Sonic S5",
@@ -274,17 +274,15 @@ function App() {
     <div className="page">
       <header className="topbar">
         <a href="#home" onClick={openHome}><h1 className="brand">Audio<span>Zone</span></h1></a>
-        <div className="header-actions">
-          <nav className="menu">
-            <a href="#home" onClick={openHome}>Home</a>
-            <a href="#categories" onClick={openHome}>Categories</a>
-            <a href="#featured" onClick={openHome}>Featured</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <a className="cart-link" href="#cart" aria-label="Open cart" onClick={openCart}>
-            <span aria-hidden="true">🛒</span> Cart ({totalItems})
-          </a>
-        </div>
+        <nav className="menu">
+          <a href="#home" onClick={openHome}>Home</a>
+          <a href="#categories" onClick={openHome}>Categories</a>
+          <a href="#featured" onClick={openHome}>Featured</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a className="cart-link" href="#cart" aria-label="Open cart" onClick={openCart}>
+          <span aria-hidden="true">🛒</span> Cart ({totalItems})
+        </a>
       </header>
 
       {activePage === "home" ? (
@@ -394,7 +392,7 @@ function App() {
           <section className="cart-items-panel">
             <h2>Your Cart</h2>
             {cartItems.length === 0 ? (
-              <p className="cart-empty">Your cart is empty. Add products from the featured section.</p>
+              <p className="cart-empty">Your cart is empty. Add products from featured or category pages.</p>
             ) : (
               <div className="cart-items-list">
                 {cartItems.map((item) => (
@@ -422,6 +420,7 @@ function App() {
               <span>Total</span>
               <span>{formatPrice(cartTotal)}</span>
             </p>
+            <button className="checkout-btn" type="button">Checkout</button>
             <button className="add-to-cart-btn" type="button" onClick={openHome}>Continue Shopping</button>
           </aside>
         </main>

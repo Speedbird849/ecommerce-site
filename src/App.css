@@ -19,9 +19,10 @@ a:link {
 }
 
 .topbar {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
 	align-items: center;
+	column-gap: 16px;
 	padding: 16px 24px;
 	background: var(--bg-surface);
 	border-bottom: 1px solid var(--border-soft);
@@ -37,15 +38,10 @@ a:link {
 	color: var(--text-main);
 }
 
-.header-actions {
-	display: flex;
-	align-items: center;
-	gap: 16px;
-}
-
 .menu {
 	display: flex;
-	gap: 16px;
+	gap: 72px;
+	justify-self: center;
 }
 
 .menu a {
@@ -579,6 +575,25 @@ footer a:visited {
 	color: var(--text-main);
 	font-weight: 700;
 	font-size: 1.05rem;
+}
+
+.checkout-btn {
+	margin-top: 8px;
+	margin-bottom: 10px;
+	width: 100%;
+	padding: 10px 14px;
+	border-radius: 4px;
+	border: 1px solid #5ecb6f;
+	background: #2f8f42;
+	color: #ebffee;
+	font-weight: 700;
+	cursor: pointer;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.checkout-btn:hover {
+	background: #3aa451;
+	transform: translateY(-1px);
 }
 
 .footer {
