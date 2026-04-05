@@ -9,7 +9,7 @@
 	--accent-soft: #91ccff;
 
 	min-height: 100vh;
-	font-family: Arial, sans-serif;
+	font-family: 'DM Sans', Arial, sans-serif;
 	color: var(--text-main);
 	background: radial-gradient(circle at top, #1a2230 0%, var(--bg-main) 45%);
 }
@@ -21,6 +21,10 @@
 	padding: 16px 24px;
 	background: var(--bg-surface);
 	border-bottom: 1px solid var(--border-soft);
+}
+
+.topbar span {
+    color: var(--accent)
 }
 
 .brand {
@@ -51,6 +55,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	width: calc(100% - 48px);
 	margin: 24px;
 	border-radius: 8px;
 	border: 1px solid var(--border-soft);
