@@ -26,6 +26,7 @@ a:link {
 	padding: 16px 24px;
 	background: var(--bg-surface);
 	border-bottom: 1px solid var(--border-soft);
+	position: static;
 }
 
 .topbar span {
