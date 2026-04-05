@@ -144,7 +144,7 @@ function App() {
           </section>
         </div>
 
-      <footer className="footer" id="contact">
+      <footer className="footer">
         <a href="https://github.com/Speedbird849/ecommerce-site">&copy; 2026 AudioZone. Designed by Aryan Gupta. All rights reserved.</a>
       </footer>
     </div>
