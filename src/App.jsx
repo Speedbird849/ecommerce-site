@@ -255,6 +255,30 @@ function App() {
     });
   };
 
+  const incrementCartItem = (productId) => {
+    setCartItems((previousItems) =>
+      previousItems.map((item) =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decrementCartItem = (productId) => {
+    setCartItems((previousItems) =>
+      previousItems
+        .map((item) =>
+          item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
+  const removeFromCart = (productId) => {
+    setCartItems((previousItems) =>
+      previousItems.filter((item) => item.id !== productId)
+    );
+  };
+
   const openCart = (event) => {
     event?.preventDefault();
     setActivePage("cart");
@@ -403,7 +427,40 @@ function App() {
                     <div className="cart-item-content">
                       <h3>{item.name}</h3>
                       <p>{item.description}</p>
-                      <p>Qty: {item.quantity}</p>
+                      <div className="cart-item-controls">
+                        <button
+                          className="cart-qty-btn"
+                          type="button"
+                          aria-label={`Decrease quantity for ${item.name}`}
+                          onClick={() => decrementCartItem(item.id)}
+                        >
+                          -
+                        </button>
+                        <span className="cart-item-quantity">Qty: {item.quantity}</span>
+                        <button
+                          className="cart-qty-btn"
+                          type="button"
+                          aria-label={`Increase quantity for ${item.name}`}
+                          onClick={() => incrementCartItem(item.id)}
+                        >
+                          +
+                        </button>
+                        <button
+                          className="cart-remove-btn"
+                          type="button"
+                          aria-label={`Remove ${item.name} from cart`}
+                          onClick={() => removeFromCart(item.id)}
+                        >
+                          <svg
+                            className="cart-remove-icon"
+                            viewBox="0 0 12 12"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <path d="M2 2L10 10M10 2L2 10" />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                     <p className="cart-item-total">{formatPrice(item.price * item.quantity)}</p>
                   </article>
@@ -423,7 +480,7 @@ function App() {
               <span>{formatPrice(cartTotal)}</span>
             </p>
             <div className="cart-actions">
-              <button className="add-to-cart-btn" type="button" onClick={openHome}>Continue Shopping</button>
+              <button className="cart-secondary-btn" type="button" onClick={openHome}>Continue Shopping</button>
               <button className="checkout-btn" type="button">Checkout</button>
             </div>
           </aside>
