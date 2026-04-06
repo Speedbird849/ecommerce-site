@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { Carousel } from "nuka-carousel";
 import "./App.css";
+import { Carousel } from 'nuka-carousel';
 import wood from "./assets/wood.png";
 import what from "./assets/what.jpg";
 import hd600 from "./assets/hd600tp.webp";
@@ -38,7 +38,7 @@ const featuredProducts = [
   {
     id: "kbear-tourbillon-pro",
     name: "KBear Tourbillon Pro",
-    description: "High-end hybrid-driver IEM",
+    description: "High-End IEMs",
     price: 2799,
     oldPrice: 3999,
     image: kbear,
@@ -47,7 +47,7 @@ const featuredProducts = [
   {
     id: "bose-solo-5",
     name: "Bose Solo 5",
-    description: "Compact cinematic soundbar",
+    description: "Best-in-class Soundbar",
     oldPrice: 11999,
     price: 10499,
     image: bose,
@@ -56,7 +56,7 @@ const featuredProducts = [
   {
     id: "fiio-m15",
     name: "FiiO M15",
-    description: "Portable hi-res audio player",
+    description: "Portable Hi-Res Audio Player",
     price: 8499,
     image: fiio,
     alt: "FiiO M15",
@@ -66,7 +66,6 @@ const featuredProducts = [
 const categoryPages = {
   headphones: {
     title: "Headphones",
-    summary: "Open-back classics, wireless daily drivers, and comfort-first over-ears.",
     image: categoryHeadphones,
     items: [
       {
@@ -106,7 +105,6 @@ const categoryPages = {
   },
   earphones: {
     title: "Earphones and IEMs",
-    summary: "Portable, detailed, and stage-ready options for every kind of listener.",
     image: categoryEarphones,
     items: [
       {
@@ -148,7 +146,6 @@ const categoryPages = {
   },
   speakers: {
     title: "Speakers and Home Audio",
-    summary: "From compact soundbars to desktop stereo pairs for immersive sessions.",
     image: categorySpeakers,
     items: [
       {
@@ -188,13 +185,12 @@ const categoryPages = {
   },
   dacs: {
     title: "DACs and AMPs",
-    summary: "Cleaner output, extra power, and richer dynamics for focused listening.",
     image: categoryDacs,
     items: [
       {
         id: "fiio-m15",
         name: "FiiO M15",
-        description: "Portable hi-res audio player",
+        description: "Portable Hi-Res Audio Player",
         price: 8499,
         image: dac1,
         alt: "FiiO M15",
@@ -227,39 +223,6 @@ const categoryPages = {
   },
 };
 
-const heroSlides = [
-  {
-    id: "slide-iem",
-    eyebrow: "Fresh arrival",
-    title: "AntCritical TZ-3 IEMs",
-    description: "Compact shell, neutral tuning, and enough detail for long evening sessions.",
-    oldPrice: 3999,
-    price: 2799,
-    image: iem,
-    category: "earphones",
-  },
-  {
-    id: "slide-headphone",
-    eyebrow: "Studio clarity",
-    title: "Wave-Technica W50x-BT",
-    description: "Wireless convenience with disciplined mids and controlled bass response.",
-    oldPrice: 5999,
-    price: 5499,
-    image: wavetechnica,
-    category: "headphones",
-  },
-  {
-    id: "slide-speaker",
-    eyebrow: "Home upgrade",
-    title: "Bose Solo 5 Soundbar",
-    description: "Dialogue-forward tuning designed for modern living-room setups.",
-    oldPrice: 11999,
-    price: 10499,
-    image: soundbar1,
-    category: "speakers",
-  },
-];
-
 function App() {
   const [activePage, setActivePage] = useState("home");
   const [cartItems, setCartItems] = useState([]);
@@ -276,7 +239,7 @@ function App() {
     [cartItems]
   );
 
-  const formatPrice = (value) => `₹${value.toLocaleString("en-IN")}`;
+  const formatPrice = (value) => `₹${value}`;
 
   const addToCart = (product) => {
     setCartItems((previousItems) => {
@@ -319,232 +282,148 @@ function App() {
   const openCart = (event) => {
     event?.preventDefault();
     setActivePage("cart");
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const openHome = (event) => {
     event?.preventDefault();
     setActivePage("home");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const openHomeSection = (sectionId) => (event) => {
-    event?.preventDefault();
-
-    if (activePage !== "home") {
-      setActivePage("home");
-    }
-
-    window.setTimeout(() => {
-      const section = document.getElementById(sectionId);
-      section?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, activePage === "home" ? 0 : 80);
   };
 
   const openCategory = (categoryKey) => (event) => {
-    event?.preventDefault();
+    event.preventDefault();
     setActivePage(categoryKey);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <div className="page">
       <header className="topbar">
-        <button className="brand-link" type="button" onClick={openHome}>
-          <h1 className="brand">
-            <span>Audio</span>Zone
-          </h1>
-        </button>
-
-        <nav className="menu" aria-label="Primary navigation">
-          <button className="menu-link" type="button" onClick={openHome}>
-            Home
-          </button>
-          <button
-            className="menu-link"
-            type="button"
-            onClick={openHomeSection("categories")}
-          >
-            Categories
-          </button>
-          <button
-            className="menu-link"
-            type="button"
-            onClick={openHomeSection("featured")}
-          >
-            Featured
-          </button>
-          <button
-            className="menu-link"
-            type="button"
-            onClick={openHomeSection("contact")}
-          >
-            Contact
-          </button>
+        <a href="#home" onClick={() => window.location.reload()}><h1 className="brand">Audio<span>Zone</span></h1></a>
+        <nav className="menu">
+          <a href="#home">Home</a>
+          <a href="#categories">Categories</a>
+          <a href="#featured">Featured</a>
+          <a href="#contact">Contact</a>
         </nav>
-
-        <button className="cart-link" type="button" aria-label="Open cart" onClick={openCart}>
-          <svg
-            className="cart-icon"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path d="M3 4h2l2.3 9.1a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.5L22 7H7" />
-            <circle cx="10" cy="19" r="1.4" />
-            <circle cx="18" cy="19" r="1.4" />
-          </svg>
-          <span>Cart ({totalItems})</span>
-        </button>
+        <a className="cart-link" href="#cart" aria-label="Open cart" onClick={openCart}>
+          <span aria-hidden="true">🛒</span> Cart ({totalItems})
+        </a>
       </header>
 
+      <br /><br /><br /><br />
+
       {activePage === "home" ? (
-        <main className="home-page" id="home">
-          <section className="hero-shell" aria-label="Hero highlights">
-            <Carousel
-              className="hero-carousel"
-              autoplay
-              autoplayInterval={3200}
-              wrapMode="wrap"
-              scrollDistance="slide"
-              showArrows
-            >
-              {heroSlides.map((slide) => (
-                <section
-                  className="hero-slide"
-                  key={slide.id}
-                  style={{
-                    backgroundImage: `linear-gradient(105deg, rgba(18, 37, 45, 0.88) 10%, rgba(24, 53, 62, 0.62) 56%, rgba(27, 63, 74, 0.4) 100%), url(${slide.image})`,
-                  }}
-                >
-                  <p className="hero-eyebrow">{slide.eyebrow}</p>
-                  <h2>{slide.title}</h2>
-                  <p className="hero-copy">{slide.description}</p>
-                  <p className="hero-price">
-                    <span className="old-price">{formatPrice(slide.oldPrice)}</span>
-                    <span className="sale-price">{formatPrice(slide.price)}</span>
-                  </p>
-                  <button
-                    className="primary-btn"
-                    type="button"
-                    onClick={openCategory(slide.category)}
-                  >
-                    Shop Now
-                  </button>
-                </section>
-              ))}
+        <>
+          <main>
+            <Carousel id="home" className="hero-carousel" autoplay={true} autoplayInterval={3000} wrapMode="wrap" scrollDistance="slide" showArrows>
+              <section className="hero hero1">
+                <p className="tagline">Introducing the All New</p>
+                <h2>AntCritical TZ-3 IEMs</h2>
+                <p className="hero-price"><span className="old-price">₹3999</span><span className="sale-price">₹2799</span></p>
+                <button type="button" onClick={openCategory("earphones")}>Shop Now</button>
+              </section>
+              <section className="hero hero2">
+                <p className="tagline">Good sound doesn't have to be expensive</p>
+                <h2>The Wave-Technica W50x-BT</h2>
+                <p className="hero-price"><span className="old-price">₹5999</span><span className="sale-price">₹5499</span></p>
+                <button type="button" onClick={openCategory("speakers")}>Shop Now</button>
+              </section>
+              <section className="hero hero3">
+                <p className="tagline">Grab a free case with the new</p>
+                <h2>TZ Thunder v2</h2>
+                <p className="hero-price"><span className="old-price">₹9999</span><span className="sale-price">₹7999</span></p>
+                <button type="button" onClick={openCategory("dacs")}>Shop Now</button>
+              </section>
             </Carousel>
-          </section>
+            <div className="who">
+              <section className="whoimg">
+                <img src={wood} alt="wood stool" />
+              </section>
+              <section className="whotext" id="about">
+                <p className="who-label">WHO WE ARE</p>
+                <h3>For People Who Choose Music</h3>
+                <p>Most people are happy if a song plays. Some people care about how it sounds. They notice when something's off, and they care enough to do something about it. They want to understand why a song moves them.
+                </p>
+                <p>
+                  We built AudioZone for them. Since 2026, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
+                </p>
+                <p>
+                  We've spent 15 years helping people find that moment. It happens with the songs you already love. Heard again, for the first time.
+                </p>
+              </section>
+            </div>
 
-          <section className="panel story-block">
-            <div className="story-image">
-              <img src={wood} alt="Wood grain texture" />
-            </div>
-            <div className="story-copy">
-              <p className="section-label">Who we are</p>
-              <h3>Built for people who notice the details.</h3>
-              <p>
-                Most stores optimize for volume. We optimize for listening. Every product
-                in AudioZone is tested for comfort, consistency, and long-session fatigue.
-              </p>
-              <p>
-                Since 2026, we have curated focused collections for Indian listeners who
-                want clean tuning, reliable build quality, and gear that ages well.
-              </p>
-            </div>
-          </section>
-
-          <section className="panel" id="featured">
-            <div className="panel-header">
-              <p className="section-label">Featured products</p>
-              <h3>Current picks for everyday critical listening.</h3>
-            </div>
-            <div className="product-grid">
-              {featuredProducts.map((product) => (
-                <article className="product-card" key={product.id}>
-                  <div className="product-image-wrap">
+            <section className="categories" id="featured">
+              <h3 className="cat-label">FEATURED PRODUCTS</h3>
+              <div className="category-grid">
+                {featuredProducts.map((product) => (
+                  <article className="cardfeat" key={product.id}>
                     <img src={product.image} alt={product.alt} />
-                  </div>
-                  <p className="product-name">{product.name}</p>
-                  <p className="product-desc">{product.description}</p>
-                  <p className="product-price">
-                    {product.oldPrice ? (
-                      <span className="old-price">{formatPrice(product.oldPrice)}</span>
-                    ) : null}
-                    <span className="sale-price">{formatPrice(product.price)}</span>
-                  </p>
-                  <button
-                    className="add-to-cart-btn"
-                    type="button"
-                    onClick={() => addToCart(product)}
-                  >
-                    Add to Cart
-                  </button>
-                </article>
-              ))}
-            </div>
-          </section>
+                    <p><b>{product.name}</b></p>
+                    <p className="desc">{product.description}</p>
+                    <p>
+                      {product.oldPrice ? <span className="old-price">{formatPrice(product.oldPrice)}</span> : null}
+                      {product.oldPrice ? " " : null}
+                      <span className="sale-price">{formatPrice(product.price)}</span>
+                    </p>
+                    <button className="add-to-cart-btn" type="button" onClick={() => addToCart(product)}>Add to Cart</button>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </main>
 
-          <section className="panel" id="categories">
-            <div className="panel-header">
-              <p className="section-label">Collections</p>
-              <h3>Find your listening style.</h3>
-            </div>
+          <section className="categories" id="categories">
+            <h3 className="cat-label">POPULAR CATEGORIES</h3>
             <div className="category-grid">
-              {Object.entries(categoryPages).map(([categoryKey, category]) => (
-                <button
-                  className="category-card"
-                  key={categoryKey}
-                  type="button"
-                  onClick={openCategory(categoryKey)}
-                >
-                  <img src={category.image} alt={category.title} />
-                  <div className="category-card-content">
-                    <p className="section-label">Category</p>
-                    <h4>{category.title}</h4>
-                    <p>{category.summary}</p>
-                  </div>
-                </button>
-              ))}
+              <a className="card-link" href="#headphones" onClick={openCategory("headphones")}>
+                <article className="card card1">
+                  <p>Headphones</p>
+                </article>
+              </a>
+              <a className="card-link" href="#earphones" onClick={openCategory("earphones")}>
+                <article className="card card2">
+                  <p>Earphones and IEMs</p>
+                </article>
+              </a>
+              <a className="card-link" href="#speakers" onClick={openCategory("speakers")}>
+                <article className="card card3">
+                  <p>Speakers and Home Audio</p>
+                </article>
+              </a>
+              <a className="card-link" href="#dacs" onClick={openCategory("dacs")}>
+                <article className="card card4">
+                  <p>DACs and AMPs</p>
+                </article>
+              </a>
             </div>
           </section>
 
-          <section className="panel story-block story-block--reverse">
-            <div className="story-image">
-              <img src={what} alt="Person listening to music" />
-            </div>
-            <div className="story-copy">
-              <p className="section-label">Why AudioZone</p>
-              <h3>Curated, not crowded.</h3>
-              <p>
-                You do not need a thousand options. You need a short list that sounds
-                right for your library, your room, and your routine.
+          <div className="what">
+            <section className="whattext" id="about">
+              <p className="who-label">WHY AUDIOZONE?</p>
+              <h3>Because Music Moves Us.</h3>
+              <p>We're huge music fans, just like you. Whether you are an audiophile seeking the finest listening experience or a professional in need of reliable equipment, our range combines cutting-edge technology with elegant design.
               </p>
               <p>
-                We keep the catalog focused and useful, so choosing gear feels calm and
-                informed rather than overwhelming.
+                We built AudioZone in 2026. Since then, we've been curating the world's finest headphones for India. We don't carry everything. Just what we've listened to and believe in. The best, not the biggest.
               </p>
-            </div>
-          </section>
-        </main>
+            </section>
+            <section className="whatimg">
+              <img src={what} alt="wood stool" />
+            </section>
+          </div>
+        </>
       ) : activePage === "cart" ? (
         <main className="cart-page" id="cart">
           <section className="cart-items-panel">
-            <div className="panel-header">
-              <p className="section-label">Your selection</p>
-              <h2>Cart</h2>
-            </div>
+            <h2>Your Cart</h2>
             {cartItems.length === 0 ? (
-              <p className="cart-empty">
-                Your cart is empty. Add products from featured or category pages.
-              </p>
+              <p className="cart-empty">Your cart is empty. Add products from featured or category pages.</p>
             ) : (
               <div className="cart-items-list">
                 {cartItems.map((item) => (
                   <article className="cart-item" key={item.id}>
-                    <div className="cart-item-media">
-                      <img src={item.image} alt={item.alt} />
-                    </div>
+                    <img src={item.image} alt={item.alt} />
                     <div className="cart-item-content">
                       <h3>{item.name}</h3>
                       <p>{item.description}</p>
@@ -591,10 +470,7 @@ function App() {
           </section>
 
           <aside className="cart-summary-panel">
-            <div className="panel-header">
-              <p className="section-label">Order summary</p>
-              <h3>Checkout</h3>
-            </div>
+            <h3>Order Summary</h3>
             <p className="summary-line">
               <span>Items</span>
               <span>{totalItems}</span>
@@ -604,55 +480,38 @@ function App() {
               <span>{formatPrice(cartTotal)}</span>
             </p>
             <div className="cart-actions">
-              <button className="cart-secondary-btn" type="button" onClick={openHome}>
-                Continue Shopping
-              </button>
-              <button className="checkout-btn" type="button">
-                Checkout
-              </button>
+              <button className="cart-secondary-btn" type="button" onClick={openHome}>Continue Shopping</button>
+              <button className="checkout-btn" type="button">Checkout</button>
             </div>
           </aside>
         </main>
       ) : (
         <main className="category-page">
-          <section className="category-hero">
+          <section className="category-header">
+            <button className="category-back-btn" type="button" onClick={openHome}>
+              Back to Home
+            </button>
             <img src={activeCategory.image} alt={activeCategory.title} />
-            <div className="category-hero-content">
-              <p className="section-label">Category spotlight</p>
+            <div className="category-header-content">
+              <p className="who-label">CATEGORY</p>
               <h2>{activeCategory.title}</h2>
-              <p>{activeCategory.summary}</p>
-              <button className="category-back-btn" type="button" onClick={openHome}>
-                Back to Home
-              </button>
             </div>
           </section>
 
-          <section className="panel">
-            <div className="panel-header">
-              <p className="section-label">Shop collection</p>
-              <h3>{activeCategory.title}</h3>
-            </div>
-            <div className="product-grid">
+          <section className="categories">
+            <h3 className="cat-label">SHOP {activeCategory.title.toUpperCase()}</h3>
+            <div className="category-grid">
               {activeCategory.items.map((product) => (
-                <article className="product-card" key={product.id}>
-                  <div className="product-image-wrap">
-                    <img src={product.image} alt={product.alt} />
-                  </div>
-                  <p className="product-name">{product.name}</p>
-                  <p className="product-desc">{product.description}</p>
-                  <p className="product-price">
-                    {product.oldPrice ? (
-                      <span className="old-price">{formatPrice(product.oldPrice)}</span>
-                    ) : null}
+                <article className="cardfeat" key={product.id}>
+                  <img src={product.image} alt={product.alt} />
+                  <p><b>{product.name}</b></p>
+                  <p className="desc">{product.description}</p>
+                  <p>
+                    {product.oldPrice ? <span className="old-price">{formatPrice(product.oldPrice)}</span> : null}
+                    {product.oldPrice ? " " : null}
                     <span className="sale-price">{formatPrice(product.price)}</span>
                   </p>
-                  <button
-                    className="add-to-cart-btn"
-                    type="button"
-                    onClick={() => addToCart(product)}
-                  >
-                    Add to Cart
-                  </button>
+                  <button className="add-to-cart-btn" type="button" onClick={() => addToCart(product)}>Add to Cart</button>
                 </article>
               ))}
             </div>
@@ -661,10 +520,7 @@ function App() {
       )}
 
       <footer className="footer" id="contact">
-        <p>Need help choosing your setup? Reach us at support@audiozone.in.</p>
-        <a className="footer-link" href="https://github.com/Speedbird849/ecommerce-site">
-          © 2026 AudioZone. Designed by Aryan Gupta. All rights reserved.
-        </a>
+        <a href="https://github.com/Speedbird849/ecommerce-site">&copy; 2026 AudioZone. Designed by Aryan Gupta. All rights reserved.</a>
       </footer>
     </div>
   );
